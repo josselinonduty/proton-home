@@ -45,20 +45,16 @@
       @media (max-width: 768px) {
         .proton-logo {
           position: initial;
-          margin-bottom: 2rem;
-        }
-      }
-      @media (max-width: 480px) {
-        .proton-logo {
-          position: initial;
           margin-top: 1rem;
           margin-bottom: 0.5rem;
         }
       }
 
       .disclaimer {
+        width: 100%;
         position: absolute;
-        bottom: 1rem;
+        bottom: 0.2rem;
+        padding: 0 0.5rem;
         left: 50%;
         transform: translateX(-50%);
         font-size: 0.75rem;
@@ -95,12 +91,12 @@
         gap: 2rem;
         margin: 0 auto;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 560px) {
         .apps-grid {
           grid-template-columns: repeat(2, 1fr);
         }
       }
-      @media (max-width: 480px) {
+      @media (max-width: 360px) {
         .apps-grid {
           grid-template-columns: repeat(1, 1fr);
         }
