@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proton Home</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        font-family: InterVariable, system-ui, sans-serif;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(27, 19, 64);
+      }
+
+      #content-container {
+        display: flex;
+        padding: 4rem;
+        width: 100%;
+        min-height: 100%;
+      }
+
+      #content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 12px;
+        position: relative;
+      }
+
+      .proton-logo {
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+      }
+      @media (max-width: 768px) {
+        .proton-logo {
+          position: initial;
+          margin-bottom: 2rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .proton-logo {
+          position: initial;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      /* Utility classes to replace Tailwind */
+      .unstyled {
+        list-style: none;
+      }
+
+      .my-0 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .p-4 {
+        padding: 1rem;
+      }
+
+      /* Grid layout for apps */
+      .apps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 0 auto;
+      }
+      @media (max-width: 768px) {
+        .apps-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .apps-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      .dropdown-item {
+        display: flex;
+        justify-content: center;
+      }
+
+      .dropdown-item .relative {
+        transition: background-color 0.2s ease;
+      }
+
+      .dropdown-item:hover .relative {
+        background-color: rgba(194, 193, 192, 0.2);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-no-decoration {
+        text-decoration: none;
+      }
+
+      .outline-none--at-all {
+        outline: none;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .flex-column {
+        flex-direction: column;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+
+      .rounded {
+        border-radius: 0.25rem;
+      }
+
+      .border {
+        border: 1px solid;
+      }
+
+      .border-weak {
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .w-custom {
+        width: var(--w-custom);
+      }
+
+      .h-custom {
+        height: var(--h-custom);
+      }
+
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .shrink-0 {
+        flex-shrink: 0;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      .mt-1 {
+        margin-top: 0.25rem;
+      }
+
+      .text-semibold {
+        font-weight: 600;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .text-ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    </style>
+    <link
+      rel="icon"
+      href="https://account.proton.me/assets/favicon.ico"
+      sizes="any"
+    />
+    <link
+      rel="icon"
+      href="https://account.proton.me/assets/favicon.ico"
+      sizes="1025x1025"
+    />
+    <link
+      rel="icon"
+      href="https://account.proton.me/assets/static/favicon.85478299dafc69454be0.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="manifest"
+      href="https://account.proton.me/assets/manifest.webmanifest"
+      crossorigin="use-credentials"
+      integrity="sha384-g0gsHDJ31Q7EEr1SZ+FH3DtEebtvAZo2k+L4ofy0Awc3es2G0CHaza1WYaQWj3Hc"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#1b1340" />
+    <meta name="application-name" content="Proton" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="https://account.proton.me/assets/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="https://account.proton.me/assets/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://account.proton.me/assets/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="https://account.proton.me/assets/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://account.proton.me/assets/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="https://account.proton.me/assets/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://account.proton.me/assets/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="https://account.proton.me/assets/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="https://account.proton.me/assets/apple-touch-icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://account.proton.me/assets/apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="1024x1024"
+      href="https://account.proton.me/assets/apple-touch-icon-1024x1024.png"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Proton" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta
+      name="msapplication-TileImage"
+      content="https://account.proton.me/assets/mstile-144x144.png"
+    />
+    <meta
+      name="msapplication-config"
+      content="https://account.proton.me/assets/browserconfig.xml"
+    />
+  </head>
+  <body>
+    <div id="content-container">
+      <div id="content">
+        <div class="proton-logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 96 36"
+            width="96"
+            height="36"
+            fill="none"
+            role="img"
+            class="logo with-wordmark"
+            aria-labelledby="logo-0-title"
+            style="inline-size: 6rem"
+          >
+            <title id="logo-0-title">Proton</title>
+            <path
+              fill="#6351E1"
+              d="M0 23.793v6.265h4.397v-5.993a2.199 2.199 0 0 1 2.199-2.199h4.509a7.933 7.933 0 0 0 7.932-7.932A7.932 7.932 0 0 0 11.105 6H0v7.83h4.397v-3.69h6.41a3.754 3.754 0 0 1 3.753 3.753 3.754 3.754 0 0 1-3.753 3.753h-4.66A6.146 6.146 0 0 0 0 23.793z"
+            ></path>
+            <path
+              fill="url(#logo-0-a)"
+              d="M6.595 21.865A6.594 6.594 0 0 0 0 28.46v1.597h4.397v-5.993a2.199 2.199 0 0 1 2.198-2.199z"
+            ></path>
+            <path
+              fill="#6351E1"
+              d="M19.717 30.058v-9.544c0-3.894 2.274-6.995 6.822-6.995.73-.01 1.459.07 2.169.24v3.928c-.518-.034-.964-.034-1.172-.034-2.41 0-3.445 1.103-3.445 3.343v9.06l-4.374.002zm10.301-8.098c0-4.789 3.617-8.441 8.648-8.441s8.649 3.652 8.649 8.442c0 4.789-3.618 8.476-8.649 8.476-5.03 0-8.648-3.688-8.648-8.476zm12.99 0c0-2.722-1.827-4.65-4.342-4.65-2.514 0-4.341 1.927-4.341 4.65 0 2.757 1.826 4.652 4.341 4.652 2.516 0 4.342-1.895 4.342-4.651zm18.295 0c0-4.789 3.618-8.441 8.648-8.441 5.031 0 8.649 3.652 8.649 8.442 0 4.789-3.618 8.476-8.648 8.476-5.03 0-8.65-3.688-8.65-8.476zm12.99 0c0-2.722-1.827-4.65-4.342-4.65-2.514 0-4.341 1.927-4.341 4.65 0 2.757 1.826 4.652 4.341 4.652 2.516 0 4.343-1.895 4.343-4.651h-.001zm6.58 8.098v-9.2c0-4.272 2.722-7.339 7.58-7.339 4.824 0 7.546 3.067 7.546 7.34v9.199H91.66v-8.855c0-2.378-1.068-3.86-3.204-3.86s-3.205 1.482-3.205 3.86v8.855h-4.378zM59.994 17.343h-4.72v6.032c0 2.102.757 3.066 2.928 3.066.207 0 .723 0 1.379-.034v3.549c-.896.241-1.687.379-2.55.379-3.652 0-6.134-2.205-6.134-6.374v-6.618H47.97v-3.48h.73a2.199 2.199 0 0 0 2.198-2.198v-3.28h4.377v5.481h4.72v3.477z"
+            ></path>
+            <defs>
+              <linearGradient
+                id="logo-0-a"
+                x1="3.297"
+                x2="3.297"
+                y1="28.872"
+                y2="19.667"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#6D4BFD"></stop>
+                <stop offset="1" stop-color="#1C0554"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <ul class="unstyled my-0 p-4 apps-grid">
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              title="Proton Mail"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="true"
+              target="_self"
+              href="https://mail.proton.me"
+              ><div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 36 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-5294-title"
+                >
+                  <title id="logo-5294-title">Proton Mail</title>
+                  <path
+                    fill="url(#logo-5294-a)"
+                    fill-rule="evenodd"
+                    d="m21.78 14.36.002.002L14 23 4 11.993V7.245a.644.644 0 0 1 1.055-.495l11.095 9.213a2.896 2.896 0 0 0 3.7 0l1.93-1.602Z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path
+                    fill="url(#logo-5294-b)"
+                    d="m26 10.857-4.22 3.504.002.001-5.588 4.936a2.575 2.575 0 0 1-3.35.05L4 11.993v14.11A2.896 2.896 0 0 0 6.897 29H26l2-9.072-2-9.072Z"
+                  ></path>
+                  <path
+                    fill="url(#logo-5294-c)"
+                    fill-rule="evenodd"
+                    d="M26 10.86V29h3.103c1.6 0 2.897-1.297 2.897-2.896V7.244a.644.644 0 0 0-1.055-.494L26 10.86Z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <defs>
+                    <linearGradient
+                      id="logo-5294-a"
+                      x1="14.507"
+                      x2="5.116"
+                      y1="23.152"
+                      y2="-9.469"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#E3D9FF"></stop>
+                      <stop offset="1" stop-color="#7341FF"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="logo-5294-c"
+                      x1="41.055"
+                      x2="19.455"
+                      y1="43.522"
+                      y2="-3.075"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset=".271" stop-color="#E3D9FF"></stop>
+                      <stop offset="1" stop-color="#7341FF"></stop>
+                    </linearGradient>
+                    <radialGradient
+                      id="logo-5294-b"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientTransform="matrix(27.9882 0 0 26.381 27.895 13.077)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset=".556" stop-color="#6D4AFF"></stop>
+                      <stop offset=".994" stop-color="#AA8EFF"></stop>
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >Mail</span
+              ></a
+            >
+          </li>
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              target="_blank"
+              title="Proton Calendar"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="false"
+              href="https://calendar.proton.me"
+              ><div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 36 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-5295-title"
+                >
+                  <title id="logo-5295-title">Proton Calendar</title>
+                  <path
+                    fill="url(#logo-5295-a)"
+                    d="M7 6a3 3 0 0 0-3 3v1l1 1v17l20-10 1 1h6V9a3 3 0 0 0-3-3H7Z"
+                  ></path>
+                  <path
+                    fill="url(#logo-5295-b)"
+                    d="M23.643 10H4v16.119A2.88 2.88 0 0 0 6.881 29H17l5.251-7.877A3.411 3.411 0 0 1 25.41 19H26v-6.643A2.357 2.357 0 0 0 23.643 10Z"
+                  ></path>
+                  <path
+                    fill="#B8D7FF"
+                    d="M17 29v-1.075a2.5 2.5 0 0 1 .602-1.627l5.053-5.897a3.43 3.43 0 0 1 .345-.404l-.345.404A3.394 3.394 0 0 0 22 22.41V29h-5Z"
+                  ></path>
+                  <path
+                    fill="#8F69FF"
+                    d="M24.6 25.386h1.02a.787.787 0 0 0 .802.596c.462-.001.766-.253.766-.623s-.316-.575-.943-.575h-.405v-.833h.352c.606 0 .854-.223.854-.555 0-.331-.269-.56-.642-.56a.642.642 0 0 0-.455.153.631.631 0 0 0-.219.425h-.985c.035-.58.497-1.414 1.654-1.414.928 0 1.57.525 1.57 1.264a1.1 1.1 0 0 1-.216.66c-.142.191-.34.335-.567.405v.015a1.117 1.117 0 0 1 .922 1.135c0 .801-.74 1.33-1.695 1.33-1.014.005-1.74-.567-1.813-1.424Zm5.292-3.306h.743v4.661h-.959v-3.576l-.923.622v-.942l1.14-.765Z"
+                  ></path>
+                  <defs>
+                    <radialGradient
+                      id="logo-5295-b"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientTransform="matrix(44.9183 0 0 40.1408 25.159 -5.851)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset=".503" stop-color="#6D4AFF"></stop>
+                      <stop offset=".994" stop-color="#06B8FF"></stop>
+                    </radialGradient>
+                    <linearGradient
+                      id="logo-5295-a"
+                      x1="27.523"
+                      x2="11.191"
+                      y1="21.036"
+                      y2="-2.692"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#BFE8FF"></stop>
+                      <stop offset=".307" stop-color="#BFABFF"></stop>
+                      <stop offset="1" stop-color="#7341FF"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >Calendar</span
+              ></a
+            >
+          </li>
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              target="_blank"
+              title="Proton Drive"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="false"
+              href="https://drive.proton.me"
+              ><div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 36 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-5296-title"
+                >
+                  <title id="logo-5296-title">Proton Drive</title>
+                  <path
+                    fill="url(#logo-5296-a)"
+                    d="m4 9 4-2 7 4h12v17l-1 1H7a3 3 0 0 1-3-3V9Z"
+                  ></path>
+                  <path
+                    fill="url(#logo-5296-b)"
+                    fill-rule="evenodd"
+                    d="M14.961 7.426A3 3 0 0 0 16.726 8H29a3 3 0 0 1 3 3v15a3 3 0 0 1-3 3h-3V14.5a2.5 2.5 0 0 0-2.5-2.5H13a3 3 0 0 1-1.8-.6L8.8 9.6A3 3 0 0 0 7 9H4a3 3 0 0 1 3-3h5.024a3 3 0 0 1 1.765.574l1.172.852Z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <defs>
+                    <radialGradient
+                      id="logo-5296-a"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientTransform="matrix(42.9176 0 0 45.5519 28.926 -8.114)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset=".556" stop-color="#6D4AFF"></stop>
+                      <stop offset="1" stop-color="#FF50C3"></stop>
+                    </radialGradient>
+                    <linearGradient
+                      id="logo-5296-b"
+                      x1="3.631"
+                      x2="38.345"
+                      y1="-6.003"
+                      y2="32.431"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#7341FF"></stop>
+                      <stop offset=".359" stop-color="#B487FF"></stop>
+                      <stop offset="1" stop-color="#FFC8FF"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >Drive</span
+              ></a
+            >
+          </li>
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              target="_blank"
+              title="Proton VPN"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="false"
+              href="https://account.proton.me/vpn"
+              ><div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 36 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-5297-title"
+                >
+                  <title id="logo-5297-title">Proton VPN</title>
+                  <path
+                    fill="url(#logo-5297-a)"
+                    fill-rule="evenodd"
+                    d="M15.247 29.149c1.064 1.913 3.797 2.017 5.005.19l11.265-17.035c1.195-1.806.052-4.228-2.111-4.475L7.263 5.31c-2.36-.269-4.041 2.22-2.893 4.285l.09.16 9.88 6.77-.12 10.77 1.027 1.854Z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path
+                    fill="url(#logo-5297-b)"
+                    d="m15.881 27.364 1-1.49 7.594-11.472c.664-1.003.03-2.349-1.17-2.487L4.456 9.752l9.764 17.552a.979.979 0 0 0 1.66.06Z"
+                  ></path>
+                  <defs>
+                    <linearGradient
+                      id="logo-5297-a"
+                      x1="29.32"
+                      x2="11.303"
+                      y1="29.148"
+                      y2="-1.922"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset=".066" stop-color="#8EFFEE"></stop>
+                      <stop offset=".45" stop-color="#C9C7FF"></stop>
+                      <stop offset="1" stop-color="#7341FF"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="logo-5297-b"
+                      x1="30.967"
+                      x2="5.738"
+                      y1="-22.452"
+                      y2="31.512"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset=".48" stop-color="#6D4AFF"></stop>
+                      <stop offset=".994" stop-color="#00F0C3"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >VPN</span
+              ></a
+            >
+          </li>
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              target="_blank"
+              title="Proton Pass"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="false"
+              href="https://pass.proton.me"
+              ><div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 36 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-5298-title"
+                >
+                  <title id="logo-5298-title">Proton Pass</title>
+                  <path
+                    fill="url(#logo-5298-a)"
+                    d="M12.42 7.54c1.95-1.96 2.93-2.93 4.06-3.3a4.93 4.93 0 0 1 3.04 0c1.13.37 2.1 1.34 4.06 3.3l4.88 4.88c1.96 1.95 2.93 2.93 3.3 4.06.32.99.32 2.05 0 3.04-.37 1.13-1.34 2.1-3.3 4.06l-4.88 4.88c-1.95 1.96-2.93 2.93-4.06 3.3-.99.32-2.05.32-3.04 0-1.13-.37-2.1-1.34-4.06-3.3l-.92-1.03a7.87 7.87 0 0 1-1.03-1.28 3.7 3.7 0 0 1-.38-1c-.09-.4-.09-.82-.09-1.66V12.51c0-.84 0-1.26.09-1.65.08-.35.2-.7.38-1 .2-.36.48-.67 1.03-1.3l.92-1.02Z"
+                  ></path>
+                  <path
+                    fill="url(#logo-5298-b)"
+                    d="M12.42 7.54c1.95-1.96 2.93-2.93 4.06-3.3a4.93 4.93 0 0 1 3.04 0c1.13.37 2.1 1.34 4.06 3.3l4.88 4.88c1.96 1.95 2.93 2.93 3.3 4.06.32.99.32 2.05 0 3.04-.37 1.13-1.34 2.1-3.3 4.06l-4.88 4.88c-1.95 1.96-2.93 2.93-4.06 3.3-.99.32-2.05.32-3.04 0-1.13-.37-2.1-1.34-4.06-3.3l-.92-1.03a7.87 7.87 0 0 1-1.03-1.28 3.7 3.7 0 0 1-.38-1c-.09-.4-.09-.82-.09-1.66V12.51c0-.84 0-1.26.09-1.65.08-.35.2-.7.38-1 .2-.36.48-.67 1.03-1.3l.92-1.02Z"
+                  ></path>
+                  <path
+                    fill="url(#logo-5298-c)"
+                    d="M12.07 7.89c.98-.98 1.47-1.47 2.03-1.65.5-.16 1.03-.16 1.52 0 .57.18 1.05.67 2.03 1.65l7.33 7.32c.97.98 1.46 1.46 1.64 2.03.16.5.16 1.03 0 1.52-.18.56-.67 1.05-1.64 2.03l-7.33 7.32c-.98.98-1.46 1.47-2.03 1.65-.5.16-1.03.16-1.52 0-.56-.18-1.05-.67-2.03-1.65l-4.53-4.53c-1.96-1.95-2.93-2.93-3.3-4.06a4.93 4.93 0 0 1 0-3.04c.37-1.13 1.34-2.1 3.3-4.06l4.53-4.53Z"
+                  ></path>
+                  <defs>
+                    <radialGradient
+                      id="logo-5298-a"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientTransform="rotate(-58.14 35.5 5.08) scale(23.3731 36.5508)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FFD580"></stop>
+                      <stop offset=".09" stop-color="#F6C592"></stop>
+                      <stop offset=".2" stop-color="#EBB6A2"></stop>
+                      <stop offset=".32" stop-color="#DFA5AF"></stop>
+                      <stop offset=".43" stop-color="#D397BE"></stop>
+                      <stop offset=".53" stop-color="#C486CB"></stop>
+                      <stop offset=".65" stop-color="#B578D9"></stop>
+                      <stop offset=".77" stop-color="#A166E5"></stop>
+                      <stop offset=".89" stop-color="#8B57F2"></stop>
+                      <stop offset="1" stop-color="#704CFF"></stop>
+                    </radialGradient>
+                    <linearGradient
+                      id="logo-5298-b"
+                      x1="11.49"
+                      x2="16.93"
+                      y1="-1.56"
+                      y2="31.68"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#6D4AFF"></stop>
+                      <stop
+                        offset=".39"
+                        stop-color="#B39FFB"
+                        stop-opacity=".98"
+                      ></stop>
+                      <stop
+                        offset="1"
+                        stop-color="#FFE8DB"
+                        stop-opacity=".8"
+                      ></stop>
+                    </linearGradient>
+                    <radialGradient
+                      id="logo-5298-c"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientTransform="matrix(9.923 -15.96803 24.97081 15.51758 10.4 29.7)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FFD580"></stop>
+                      <stop offset=".09" stop-color="#F6C592"></stop>
+                      <stop offset=".2" stop-color="#EBB6A2"></stop>
+                      <stop offset=".32" stop-color="#DFA5AF"></stop>
+                      <stop offset=".43" stop-color="#D397BE"></stop>
+                      <stop offset=".53" stop-color="#C486CB"></stop>
+                      <stop offset=".65" stop-color="#B578D9"></stop>
+                      <stop offset=".77" stop-color="#A166E5"></stop>
+                      <stop offset=".89" stop-color="#8B57F2"></stop>
+                      <stop offset="1" stop-color="#704CFF"></stop>
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >Pass</span
+              ></a
+            >
+          </li>
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              target="_blank"
+              title="Proton Docs"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="false"
+              href="https://docs.proton.me"
+              ><div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 38 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-5299-title"
+                >
+                  <title id="logo-5299-title">Proton Docs</title>
+                  <g clip-path="url(#logo-5299-a)">
+                    <path
+                      d="M27.5786 5H8.94768C6.76744 5 5 6.76744 5 8.94768V27.5786C5 29.7589 6.76744 31.5263 8.94768 31.5263H27.5786C29.7589 31.5263 31.5263 29.7589 31.5263 27.5786V8.94768C31.5263 6.76744 29.7589 5 27.5786 5Z"
+                      fill="url(#logo-5299-b)"
+                    ></path>
+                    <path
+                      d="M18.2632 5H24.8947V11.6316H18.2632V5Z"
+                      fill="#85D4F5"
+                    ></path>
+                    <path
+                      d="M24.8928 5H27.5767C28.6237 5 29.6278 5.41592 30.3682 6.15625C31.1085 6.89658 31.5244 7.90069 31.5244 8.94768V11.6316H24.8928V5Z"
+                      fill="#D6F1FC"
+                    ></path>
+                    <path
+                      d="M24.8928 11.6316H31.5244V18.2632H24.8928V11.6316Z"
+                      fill="#85D4F5"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M19.3697 26.0003C19.3697 26.6104 18.8752 27.105 18.2651 27.105H10.5279C10.38 27.1093 10.2328 27.0839 10.095 27.0303C9.95711 26.9767 9.8314 26.896 9.7253 26.793C9.61919 26.6899 9.53484 26.5666 9.47723 26.4304C9.41963 26.2942 9.38995 26.1478 9.38995 25.9998C9.38995 25.8519 9.41963 25.7055 9.47723 25.5693C9.53484 25.4331 9.61919 25.3098 9.7253 25.2067C9.8314 25.1037 9.95711 25.023 10.095 24.9694C10.2328 24.9158 10.38 24.8904 10.5279 24.8947H18.2632C18.8742 24.8947 19.3687 25.3893 19.3687 26.0003H19.3697ZM16.0539 21.578C16.0539 22.1881 15.5594 22.6826 14.9493 22.6826H10.5279C10.2404 22.6742 9.96751 22.5541 9.76713 22.3478C9.56676 22.1414 9.45467 21.8651 9.45467 21.5775C9.45467 21.2899 9.56676 21.0136 9.76713 20.8073C9.96751 20.601 10.2404 20.4808 10.5279 20.4724H14.9493C15.5594 20.4724 16.0539 20.967 16.0539 21.578Z"
+                      fill="white"
+                    ></path>
+                  </g>
+                  <defs>
+                    <radialGradient
+                      id="logo-5299-b"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientTransform="rotate(-53.15 35.608 20.231) scale(33.0407)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#6D4AFF"></stop>
+                      <stop offset="1" stop-color="#34B8EE"></stop>
+                    </radialGradient>
+                    <clipPath id="logo-5299-a">
+                      <path fill="#fff" d="M0 0h141v36H0z"></path>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >Docs</span
+              ></a
+            >
+          </li>
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              target="_blank"
+              title="Proton Wallet"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="false"
+              href="https://wallet.proton.me"
+              ><div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 36 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-5300-title"
+                >
+                  <title id="logo-5300-title">Proton Wallet</title>
+                  <path
+                    d="M4.00397 27.1283C4.00397 28.76 5.32671 30.0827 6.95838 30.0827L29.0455 30.0827C30.6772 30.0827 31.9999 28.76 31.9999 27.1283V17.6742C31.9999 11.1475 26.709 5.85652 20.1823 5.85652H6.95838C5.3267 5.85652 4.00397 7.17926 4.00397 8.81094V18.1193L9.84007 18.1193C11.9446 18.1193 13.6511 19.9425 13.6511 22.1911C13.6511 24.4396 11.9446 26.2629 9.84007 26.2629H4.00397V27.1283Z"
+                    fill="url(#logo-5300-a)"
+                  ></path>
+                  <path
+                    d="M9.54645 20.0377C10.743 20.0377 11.713 21.0077 11.713 22.2042C11.713 23.4008 10.743 24.3708 9.54645 24.3708C8.34989 24.3708 7.37988 23.4008 7.37988 22.2042C7.37988 21.0077 8.34989 20.0377 9.54645 20.0377Z"
+                    fill="url(#logo-5300-b)"
+                  ></path>
+                  <path
+                    d="M4.00006 27.1891C4.00006 28.8207 5.3228 30.1435 6.95448 30.1435H26.0911V18.7197C26.0911 13.8247 22.1229 9.85651 17.2279 9.85651H4.00006V18.1193L9.84007 18.1193C11.9446 18.1193 13.6511 19.9425 13.6511 22.1911C13.6511 24.4396 11.9446 26.2629 9.84007 26.2629H4.00006V27.1891Z"
+                    fill="#6D4AFF"
+                  ></path>
+                  <path
+                    d="M4.00006 27.1891C4.00006 28.8207 5.3228 30.1435 6.95448 30.1435H26.0911V18.7197C26.0911 13.8247 22.1229 9.85651 17.2279 9.85651H4.00006V18.1193L9.84007 18.1193C11.9446 18.1193 13.6511 19.9425 13.6511 22.1911C13.6511 24.4396 11.9446 26.2629 9.84007 26.2629H4.00006V27.1891Z"
+                    fill="url(#logo-5300-c)"
+                    fill-opacity="0.9"
+                  ></path>
+                  <path
+                    d="M9.54645 20.0377C10.743 20.0377 11.713 21.0077 11.713 22.2042C11.713 23.4008 10.743 24.3708 9.54645 24.3708C8.34989 24.3708 7.37988 23.4008 7.37988 22.2042C7.37988 21.0077 8.34989 20.0377 9.54645 20.0377Z"
+                    fill="#6D4AFF"
+                  ></path>
+                  <path
+                    d="M9.54645 20.0377C10.743 20.0377 11.713 21.0077 11.713 22.2042C11.713 23.4008 10.743 24.3708 9.54645 24.3708C8.34989 24.3708 7.37988 23.4008 7.37988 22.2042C7.37988 21.0077 8.34989 20.0377 9.54645 20.0377Z"
+                    fill="url(#logo-5300-d)"
+                    fill-opacity="0.9"
+                  ></path>
+                  <path
+                    d="M12.6247 24.9708C11.9292 25.7659 10.9389 26.2629 9.84007 26.2629H4.00006V27.1282C4.00006 28.7599 5.3228 30.0827 6.95447 30.0827H8.19005L12.6978 24.9617L12.6247 24.9708Z"
+                    fill="#FFBB93"
+                  ></path>
+                  <defs>
+                    <linearGradient
+                      id="logo-5300-a"
+                      x1="0.486198"
+                      y1="8.67596"
+                      x2="35.1235"
+                      y2="22.1686"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#957AFD"></stop>
+                      <stop offset="1" stop-color="#FFC6C6"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="logo-5300-b"
+                      x1="0.486198"
+                      y1="8.67596"
+                      x2="35.1235"
+                      y2="22.1686"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#957AFD"></stop>
+                      <stop offset="1" stop-color="#FFC6C6"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="logo-5300-c"
+                      x1="24.8427"
+                      y1="12.9711"
+                      x2="14.0991"
+                      y2="34.8323"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop
+                        offset="0.149916"
+                        stop-color="#FA528E"
+                        stop-opacity="0"
+                      ></stop>
+                      <stop offset="0.720842" stop-color="#FF8065"></stop>
+                      <stop offset="1" stop-color="#FFA51F"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="logo-5300-d"
+                      x1="24.8427"
+                      y1="12.9711"
+                      x2="14.0991"
+                      y2="34.8323"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop
+                        offset="0.149916"
+                        stop-color="#FA528E"
+                        stop-opacity="0"
+                      ></stop>
+                      <stop offset="0.720842" stop-color="#FF8065"></stop>
+                      <stop offset="1" stop-color="#FFA51F"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >Wallet</span
+              ></a
+            >
+          </li>
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              target="_blank"
+              title="Lumo"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="false"
+              href="https://lumo.proton.me"
+              ><div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 36 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-5301-title"
+                >
+                  <title id="logo-5301-title">Lumo</title>
+                  <path
+                    fill="#6D4AFF"
+                    d="m22.669 7.465 3.343-2.163c1.16-.75 2.698-.027 2.874 1.35l.81 6.348-7.029-5.535h.002ZM13.59 7.465l-3.344-2.163c-1.16-.75-2.698-.027-2.874 1.35L6.563 13l7.029-5.535h-.002Z"
+                  ></path>
+                  <path
+                    fill="#4A2DC5"
+                    d="m9.322 7.853 1.623 1.052-2.647 1.792.32-2.515a.457.457 0 0 1 .702-.329h.002ZM26.69 7.853l-1.624 1.052 2.647 1.792-.32-2.515a.457.457 0 0 0-.702-.329h-.002Z"
+                  ></path>
+                  <path
+                    fill="#4129A3"
+                    d="M27.017 25.377H8.98v4.756h18.037v-4.756Z"
+                  ></path>
+                  <path
+                    fill="#FC8F00"
+                    d="M18.475 34.523c1.667 0 3.019-1.361 3.019-3.04 0-1.68-1.352-3.042-3.019-3.042s-3.019 1.362-3.019 3.041c0 1.68 1.352 3.041 3.02 3.041Z"
+                  ></path>
+                  <path
+                    fill="#FC8F00"
+                    d="M17.35 34.525h1.156v-6.08H17.35v6.08Z"
+                  ></path>
+                  <path
+                    fill="#FFAC2E"
+                    d="M17.347 34.523c1.667 0 3.018-1.361 3.018-3.04 0-1.68-1.351-3.042-3.018-3.042-1.667 0-3.019 1.362-3.019 3.041 0 1.68 1.352 3.041 3.019 3.041Z"
+                  ></path>
+                  <path
+                    fill="#372580"
+                    d="M17.344 31.983a.942.942 0 0 0 .939-.946.942.942 0 0 0-.94-.946.942.942 0 0 0-.938.946c0 .522.42.946.939.946Z"
+                  ></path>
+                  <path
+                    stroke="#372580"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width=".96"
+                    d="M17.344 32.52v-1.48"
+                  ></path>
+                  <path
+                    fill="#6D4AFF"
+                    d="M32 19.653c0 6.48-7.633 8.789-14 8.789-5.596 0-14-2.31-14-8.79 0-6.479 6.268-13.028 14-13.028s14 6.55 14 13.029Z"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="M24.865 21.767c2.315-1.006 3.473-3.499 2.587-5.569-.886-2.07-3.48-2.932-5.796-1.926-2.315 1.005-3.473 3.499-2.587 5.568.886 2.07 3.481 2.933 5.796 1.927ZM14.44 19.839c.887-2.07-.272-4.563-2.587-5.569-2.315-1.006-4.91-.143-5.796 1.927-.886 2.07.272 4.563 2.587 5.569 2.315 1.005 4.91.143 5.797-1.927Z"
+                  ></path>
+                  <path
+                    fill="#4129A3"
+                    d="M23.502 20.546c.844 0 1.528-1.123 1.528-2.508 0-1.386-.684-2.509-1.528-2.509s-1.528 1.123-1.528 2.509c0 1.385.684 2.508 1.528 2.508Z"
+                  ></path>
+                  <path
+                    fill="#372480"
+                    d="M14.577 17.268c-1.272-3.114-5.925-4.304-8.017-1.437-.652.91-.81 2.087-.558 3.192-.89-1.68-.217-3.84 1.384-4.821 2.617-1.723 6.671-.06 7.19 3.067v-.001ZM18.934 17.267c.52-3.127 4.574-4.788 7.19-3.067 1.602.982 2.274 3.142 1.384 4.821.255-1.103.095-2.282-.558-3.192-2.092-2.867-6.744-1.677-8.016 1.437v.002Z"
+                  ></path>
+                  <path
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width=".424"
+                    d="M15.354 21.67c.512 0 .925.419.925.933"
+                  ></path>
+                  <path
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width=".424"
+                    d="M17.201 21.67a.928.928 0 0 0-.925.933"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="M24.43 16.983c.319 0 .577-.26.577-.58 0-.322-.259-.582-.577-.582a.579.579 0 0 0-.576.581c0 .32.258.581.576.581Z"
+                    opacity=".7"
+                  ></path>
+                  <path
+                    fill="#4129A3"
+                    d="M10.32 20.546c.845 0 1.529-1.123 1.529-2.508 0-1.386-.684-2.509-1.528-2.509s-1.528 1.123-1.528 2.509c0 1.385.684 2.508 1.528 2.508Z"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="M11.249 16.983c.318 0 .576-.26.576-.58 0-.322-.258-.582-.576-.582a.579.579 0 0 0-.577.581c0 .32.258.581.577.581Z"
+                    opacity=".7"
+                  ></path>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >Lumo</span
+              ></a
+            >
+          </li>
+        </ul>
+        <div
+          style="
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: #666;
+            text-align: center;
+          "
+        >
+          This is an unofficial project and is not endorsed by or affiliated
+          with Proton AG.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
