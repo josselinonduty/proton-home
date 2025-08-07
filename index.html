@@ -56,6 +56,24 @@
         }
       }
 
+      .disclaimer {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.75rem;
+        color: #666;
+        text-align: center;
+      }
+      @media (max-width: 768px) {
+        .disclaimer {
+          position: initial;
+          transform: none;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+        }
+      }
+
       /* Utility classes to replace Tailwind */
       .unstyled {
         list-style: none;
@@ -1010,17 +1028,7 @@
             >
           </li>
         </ul>
-        <div
-          style="
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.75rem;
-            color: #666;
-            text-align: center;
-          "
-        >
+        <div class="disclaimer">
           This is an unofficial project and is not endorsed by or affiliated
           with Proton AG.
         </div>
