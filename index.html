@@ -12,6 +12,7 @@
 
         font-family: InterVariable, system-ui, sans-serif;
       }
+
       html,
       body {
         width: 100%;
@@ -42,6 +43,7 @@
         top: 1rem;
         left: 2rem;
       }
+
       @media (max-width: 768px) {
         .proton-logo {
           position: initial;
@@ -61,6 +63,7 @@
         color: #666;
         text-align: center;
       }
+
       @media (max-width: 768px) {
         .disclaimer {
           position: initial;
@@ -91,11 +94,13 @@
         gap: 2rem;
         margin: 0 auto;
       }
+
       @media (max-width: 560px) {
         .apps-grid {
           grid-template-columns: repeat(2, 1fr);
         }
       }
+
       @media (max-width: 360px) {
         .apps-grid {
           grid-template-columns: repeat(1, 1fr);
@@ -299,6 +304,7 @@
       content="https://account.proton.me/assets/browserconfig.xml"
     />
   </head>
+
   <body>
     <div id="content-container">
       <div id="content">
@@ -351,7 +357,8 @@
               aria-current="true"
               target="_self"
               href="https://mail.proton.me"
-              ><div
+            >
+              <div
                 class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style="--w-custom: 3.25rem; --h-custom: 3.25rem"
               >
@@ -422,17 +429,18 @@
               </div>
               <span class="block text-center text-sm mt-1" aria-hidden="true"
                 >Mail</span
-              ></a
-            >
+              >
+            </a>
           </li>
           <li class="dropdown-item" data-testid="apps-dropdown-item">
             <a
-              target="_blank"
+              target="_self"
               title="Proton Calendar"
               class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
               aria-current="false"
               href="https://calendar.proton.me"
-              ><div
+            >
+              <div
                 class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style="--w-custom: 3.25rem; --h-custom: 3.25rem"
               >
@@ -493,17 +501,18 @@
               </div>
               <span class="block text-center text-sm mt-1" aria-hidden="true"
                 >Calendar</span
-              ></a
-            >
+              >
+            </a>
           </li>
           <li class="dropdown-item" data-testid="apps-dropdown-item">
             <a
-              target="_blank"
+              target="_self"
               title="Proton Drive"
               class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
               aria-current="false"
               href="https://drive.proton.me"
-              ><div
+            >
+              <div
                 class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style="--w-custom: 3.25rem; --h-custom: 3.25rem"
               >
@@ -558,17 +567,18 @@
               </div>
               <span class="block text-center text-sm mt-1" aria-hidden="true"
                 >Drive</span
-              ></a
-            >
+              >
+            </a>
           </li>
           <li class="dropdown-item" data-testid="apps-dropdown-item">
             <a
-              target="_blank"
+              target="_self"
               title="Proton VPN"
               class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
               aria-current="false"
               href="https://account.proton.me/vpn"
-              ><div
+            >
+              <div
                 class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style="--w-custom: 3.25rem; --h-custom: 3.25rem"
               >
@@ -623,17 +633,18 @@
               </div>
               <span class="block text-center text-sm mt-1" aria-hidden="true"
                 >VPN</span
-              ></a
-            >
+              >
+            </a>
           </li>
           <li class="dropdown-item" data-testid="apps-dropdown-item">
             <a
-              target="_blank"
+              target="_self"
               title="Proton Pass"
               class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
               aria-current="false"
               href="https://pass.proton.me"
-              ><div
+            >
+              <div
                 class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style="--w-custom: 3.25rem; --h-custom: 3.25rem"
               >
@@ -725,87 +736,128 @@
               </div>
               <span class="block text-center text-sm mt-1" aria-hidden="true"
                 >Pass</span
-              ></a
-            >
+              >
+            </a>
           </li>
           <li class="dropdown-item" data-testid="apps-dropdown-item">
             <a
-              target="_blank"
-              title="Proton Docs"
+              target="_self"
+              title="Lumo"
               class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
               aria-current="false"
-              href="https://docs.proton.me"
-              ><div
+              href="https://lumo.proton.me"
+            >
+              <div
                 class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style="--w-custom: 3.25rem; --h-custom: 3.25rem"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 0 38 36"
+                  viewBox="0 0 36 36"
                   width="36"
                   height="36"
                   fill="none"
                   role="img"
                   class="logo icon-size-9 glyph-only shrink-0"
-                  aria-labelledby="logo-5299-title"
+                  aria-labelledby="logo-5301-title"
                 >
-                  <title id="logo-5299-title">Proton Docs</title>
-                  <g clip-path="url(#logo-5299-a)">
-                    <path
-                      d="M27.5786 5H8.94768C6.76744 5 5 6.76744 5 8.94768V27.5786C5 29.7589 6.76744 31.5263 8.94768 31.5263H27.5786C29.7589 31.5263 31.5263 29.7589 31.5263 27.5786V8.94768C31.5263 6.76744 29.7589 5 27.5786 5Z"
-                      fill="url(#logo-5299-b)"
-                    ></path>
-                    <path
-                      d="M18.2632 5H24.8947V11.6316H18.2632V5Z"
-                      fill="#85D4F5"
-                    ></path>
-                    <path
-                      d="M24.8928 5H27.5767C28.6237 5 29.6278 5.41592 30.3682 6.15625C31.1085 6.89658 31.5244 7.90069 31.5244 8.94768V11.6316H24.8928V5Z"
-                      fill="#D6F1FC"
-                    ></path>
-                    <path
-                      d="M24.8928 11.6316H31.5244V18.2632H24.8928V11.6316Z"
-                      fill="#85D4F5"
-                    ></path>
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M19.3697 26.0003C19.3697 26.6104 18.8752 27.105 18.2651 27.105H10.5279C10.38 27.1093 10.2328 27.0839 10.095 27.0303C9.95711 26.9767 9.8314 26.896 9.7253 26.793C9.61919 26.6899 9.53484 26.5666 9.47723 26.4304C9.41963 26.2942 9.38995 26.1478 9.38995 25.9998C9.38995 25.8519 9.41963 25.7055 9.47723 25.5693C9.53484 25.4331 9.61919 25.3098 9.7253 25.2067C9.8314 25.1037 9.95711 25.023 10.095 24.9694C10.2328 24.9158 10.38 24.8904 10.5279 24.8947H18.2632C18.8742 24.8947 19.3687 25.3893 19.3687 26.0003H19.3697ZM16.0539 21.578C16.0539 22.1881 15.5594 22.6826 14.9493 22.6826H10.5279C10.2404 22.6742 9.96751 22.5541 9.76713 22.3478C9.56676 22.1414 9.45467 21.8651 9.45467 21.5775C9.45467 21.2899 9.56676 21.0136 9.76713 20.8073C9.96751 20.601 10.2404 20.4808 10.5279 20.4724H14.9493C15.5594 20.4724 16.0539 20.967 16.0539 21.578Z"
-                      fill="white"
-                    ></path>
-                  </g>
-                  <defs>
-                    <radialGradient
-                      id="logo-5299-b"
-                      cx="0"
-                      cy="0"
-                      r="1"
-                      gradientTransform="rotate(-53.15 35.608 20.231) scale(33.0407)"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stop-color="#6D4AFF"></stop>
-                      <stop offset="1" stop-color="#34B8EE"></stop>
-                    </radialGradient>
-                    <clipPath id="logo-5299-a">
-                      <path fill="#fff" d="M0 0h141v36H0z"></path>
-                    </clipPath>
-                  </defs>
+                  <title id="logo-5301-title">Lumo</title>
+                  <path
+                    fill="#6D4AFF"
+                    d="m22.669 7.465 3.343-2.163c1.16-.75 2.698-.027 2.874 1.35l.81 6.348-7.029-5.535h.002ZM13.59 7.465l-3.344-2.163c-1.16-.75-2.698-.027-2.874 1.35L6.563 13l7.029-5.535h-.002Z"
+                  ></path>
+                  <path
+                    fill="#4A2DC5"
+                    d="m9.322 7.853 1.623 1.052-2.647 1.792.32-2.515a.457.457 0 0 1 .702-.329h.002ZM26.69 7.853l-1.624 1.052 2.647 1.792-.32-2.515a.457.457 0 0 0-.702-.329h-.002Z"
+                  ></path>
+                  <path
+                    fill="#4129A3"
+                    d="M27.017 25.377H8.98v4.756h18.037v-4.756Z"
+                  ></path>
+                  <path
+                    fill="#FC8F00"
+                    d="M18.475 34.523c1.667 0 3.019-1.361 3.019-3.04 0-1.68-1.352-3.042-3.019-3.042s-3.019 1.362-3.019 3.041c0 1.68 1.352 3.041 3.02 3.041Z"
+                  ></path>
+                  <path
+                    fill="#FC8F00"
+                    d="M17.35 34.525h1.156v-6.08H17.35v6.08Z"
+                  ></path>
+                  <path
+                    fill="#FFAC2E"
+                    d="M17.347 34.523c1.667 0 3.018-1.361 3.018-3.04 0-1.68-1.351-3.042-3.018-3.042-1.667 0-3.019 1.362-3.019 3.041 0 1.68 1.352 3.041 3.019 3.041Z"
+                  ></path>
+                  <path
+                    fill="#372580"
+                    d="M17.344 31.983a.942.942 0 0 0 .939-.946.942.942 0 0 0-.94-.946.942.942 0 0 0-.938.946c0 .522.42.946.939.946Z"
+                  ></path>
+                  <path
+                    stroke="#372580"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width=".96"
+                    d="M17.344 32.52v-1.48"
+                  ></path>
+                  <path
+                    fill="#6D4AFF"
+                    d="M32 19.653c0 6.48-7.633 8.789-14 8.789-5.596 0-14-2.31-14-8.79 0-6.479 6.268-13.028 14-13.028s14 6.55 14 13.029Z"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="M24.865 21.767c2.315-1.006 3.473-3.499 2.587-5.569-.886-2.07-3.48-2.932-5.796-1.926-2.315 1.005-3.473 3.499-2.587 5.568.886 2.07 3.481 2.933 5.796 1.927ZM14.44 19.839c.887-2.07-.272-4.563-2.587-5.569-2.315-1.006-4.91-.143-5.796 1.927-.886 2.07.272 4.563 2.587 5.569 2.315 1.005 4.91.143 5.797-1.927Z"
+                  ></path>
+                  <path
+                    fill="#4129A3"
+                    d="M23.502 20.546c.844 0 1.528-1.123 1.528-2.508 0-1.386-.684-2.509-1.528-2.509s-1.528 1.123-1.528 2.509c0 1.385.684 2.508 1.528 2.508Z"
+                  ></path>
+                  <path
+                    fill="#372480"
+                    d="M14.577 17.268c-1.272-3.114-5.925-4.304-8.017-1.437-.652.91-.81 2.087-.558 3.192-.89-1.68-.217-3.84 1.384-4.821 2.617-1.723 6.671-.06 7.19 3.067v-.001ZM18.934 17.267c.52-3.127 4.574-4.788 7.19-3.067 1.602.982 2.274 3.142 1.384 4.821.255-1.103.095-2.282-.558-3.192-2.092-2.867-6.744-1.677-8.016 1.437v.002Z"
+                  ></path>
+                  <path
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width=".424"
+                    d="M15.354 21.67c.512 0 .925.419.925.933"
+                  ></path>
+                  <path
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width=".424"
+                    d="M17.201 21.67a.928.928 0 0 0-.925.933"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="M24.43 16.983c.319 0 .577-.26.577-.58 0-.322-.259-.582-.577-.582a.579.579 0 0 0-.576.581c0 .32.258.581.576.581Z"
+                    opacity=".7"
+                  ></path>
+                  <path
+                    fill="#4129A3"
+                    d="M10.32 20.546c.845 0 1.529-1.123 1.529-2.508 0-1.386-.684-2.509-1.528-2.509s-1.528 1.123-1.528 2.509c0 1.385.684 2.508 1.528 2.508Z"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="M11.249 16.983c.318 0 .576-.26.576-.58 0-.322-.258-.582-.576-.582a.579.579 0 0 0-.577.581c0 .32.258.581.577.581Z"
+                    opacity=".7"
+                  ></path>
                 </svg>
               </div>
               <span class="block text-center text-sm mt-1" aria-hidden="true"
-                >Docs</span
-              ></a
-            >
+                >Lumo</span
+              >
+            </a>
           </li>
           <li class="dropdown-item" data-testid="apps-dropdown-item">
             <a
-              target="_blank"
+              target="_self"
               title="Proton Wallet"
               class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
               aria-current="false"
               href="https://wallet.proton.me"
-              ><div
+            >
+              <div
                 class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style="--w-custom: 3.25rem; --h-custom: 3.25rem"
               >
@@ -911,117 +963,154 @@
               </div>
               <span class="block text-center text-sm mt-1" aria-hidden="true"
                 >Wallet</span
-              ></a
-            >
+              >
+            </a>
           </li>
           <li class="dropdown-item" data-testid="apps-dropdown-item">
             <a
-              target="_blank"
-              title="Lumo"
+              target="_self"
+              title="Proton Docs"
               class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
               aria-current="false"
-              href="https://lumo.proton.me"
-              ><div
+              href="https://docs.proton.me"
+            >
+              <div
                 class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                 style="--w-custom: 3.25rem; --h-custom: 3.25rem"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 0 36 36"
+                  viewBox="0 0 38 36"
                   width="36"
                   height="36"
                   fill="none"
                   role="img"
                   class="logo icon-size-9 glyph-only shrink-0"
-                  aria-labelledby="logo-5301-title"
+                  aria-labelledby="logo-5299-title"
                 >
-                  <title id="logo-5301-title">Lumo</title>
-                  <path
-                    fill="#6D4AFF"
-                    d="m22.669 7.465 3.343-2.163c1.16-.75 2.698-.027 2.874 1.35l.81 6.348-7.029-5.535h.002ZM13.59 7.465l-3.344-2.163c-1.16-.75-2.698-.027-2.874 1.35L6.563 13l7.029-5.535h-.002Z"
-                  ></path>
-                  <path
-                    fill="#4A2DC5"
-                    d="m9.322 7.853 1.623 1.052-2.647 1.792.32-2.515a.457.457 0 0 1 .702-.329h.002ZM26.69 7.853l-1.624 1.052 2.647 1.792-.32-2.515a.457.457 0 0 0-.702-.329h-.002Z"
-                  ></path>
-                  <path
-                    fill="#4129A3"
-                    d="M27.017 25.377H8.98v4.756h18.037v-4.756Z"
-                  ></path>
-                  <path
-                    fill="#FC8F00"
-                    d="M18.475 34.523c1.667 0 3.019-1.361 3.019-3.04 0-1.68-1.352-3.042-3.019-3.042s-3.019 1.362-3.019 3.041c0 1.68 1.352 3.041 3.02 3.041Z"
-                  ></path>
-                  <path
-                    fill="#FC8F00"
-                    d="M17.35 34.525h1.156v-6.08H17.35v6.08Z"
-                  ></path>
-                  <path
-                    fill="#FFAC2E"
-                    d="M17.347 34.523c1.667 0 3.018-1.361 3.018-3.04 0-1.68-1.351-3.042-3.018-3.042-1.667 0-3.019 1.362-3.019 3.041 0 1.68 1.352 3.041 3.019 3.041Z"
-                  ></path>
-                  <path
-                    fill="#372580"
-                    d="M17.344 31.983a.942.942 0 0 0 .939-.946.942.942 0 0 0-.94-.946.942.942 0 0 0-.938.946c0 .522.42.946.939.946Z"
-                  ></path>
-                  <path
-                    stroke="#372580"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width=".96"
-                    d="M17.344 32.52v-1.48"
-                  ></path>
-                  <path
-                    fill="#6D4AFF"
-                    d="M32 19.653c0 6.48-7.633 8.789-14 8.789-5.596 0-14-2.31-14-8.79 0-6.479 6.268-13.028 14-13.028s14 6.55 14 13.029Z"
-                  ></path>
-                  <path
-                    fill="#fff"
-                    d="M24.865 21.767c2.315-1.006 3.473-3.499 2.587-5.569-.886-2.07-3.48-2.932-5.796-1.926-2.315 1.005-3.473 3.499-2.587 5.568.886 2.07 3.481 2.933 5.796 1.927ZM14.44 19.839c.887-2.07-.272-4.563-2.587-5.569-2.315-1.006-4.91-.143-5.796 1.927-.886 2.07.272 4.563 2.587 5.569 2.315 1.005 4.91.143 5.797-1.927Z"
-                  ></path>
-                  <path
-                    fill="#4129A3"
-                    d="M23.502 20.546c.844 0 1.528-1.123 1.528-2.508 0-1.386-.684-2.509-1.528-2.509s-1.528 1.123-1.528 2.509c0 1.385.684 2.508 1.528 2.508Z"
-                  ></path>
-                  <path
-                    fill="#372480"
-                    d="M14.577 17.268c-1.272-3.114-5.925-4.304-8.017-1.437-.652.91-.81 2.087-.558 3.192-.89-1.68-.217-3.84 1.384-4.821 2.617-1.723 6.671-.06 7.19 3.067v-.001ZM18.934 17.267c.52-3.127 4.574-4.788 7.19-3.067 1.602.982 2.274 3.142 1.384 4.821.255-1.103.095-2.282-.558-3.192-2.092-2.867-6.744-1.677-8.016 1.437v.002Z"
-                  ></path>
-                  <path
-                    stroke="#fff"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width=".424"
-                    d="M15.354 21.67c.512 0 .925.419.925.933"
-                  ></path>
-                  <path
-                    stroke="#fff"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width=".424"
-                    d="M17.201 21.67a.928.928 0 0 0-.925.933"
-                  ></path>
-                  <path
-                    fill="#fff"
-                    d="M24.43 16.983c.319 0 .577-.26.577-.58 0-.322-.259-.582-.577-.582a.579.579 0 0 0-.576.581c0 .32.258.581.576.581Z"
-                    opacity=".7"
-                  ></path>
-                  <path
-                    fill="#4129A3"
-                    d="M10.32 20.546c.845 0 1.529-1.123 1.529-2.508 0-1.386-.684-2.509-1.528-2.509s-1.528 1.123-1.528 2.509c0 1.385.684 2.508 1.528 2.508Z"
-                  ></path>
-                  <path
-                    fill="#fff"
-                    d="M11.249 16.983c.318 0 .576-.26.576-.58 0-.322-.258-.582-.576-.582a.579.579 0 0 0-.577.581c0 .32.258.581.577.581Z"
-                    opacity=".7"
-                  ></path>
+                  <title id="logo-5299-title">Proton Docs</title>
+                  <g clip-path="url(#logo-5299-a)">
+                    <path
+                      d="M27.5786 5H8.94768C6.76744 5 5 6.76744 5 8.94768V27.5786C5 29.7589 6.76744 31.5263 8.94768 31.5263H27.5786C29.7589 31.5263 31.5263 29.7589 31.5263 27.5786V8.94768C31.5263 6.76744 29.7589 5 27.5786 5Z"
+                      fill="url(#logo-5299-b)"
+                    ></path>
+                    <path
+                      d="M18.2632 5H24.8947V11.6316H18.2632V5Z"
+                      fill="#85D4F5"
+                    ></path>
+                    <path
+                      d="M24.8928 5H27.5767C28.6237 5 29.6278 5.41592 30.3682 6.15625C31.1085 6.89658 31.5244 7.90069 31.5244 8.94768V11.6316H24.8928V5Z"
+                      fill="#D6F1FC"
+                    ></path>
+                    <path
+                      d="M24.8928 11.6316H31.5244V18.2632H24.8928V11.6316Z"
+                      fill="#85D4F5"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M19.3697 26.0003C19.3697 26.6104 18.8752 27.105 18.2651 27.105H10.5279C10.38 27.1093 10.2328 27.0839 10.095 27.0303C9.95711 26.9767 9.8314 26.896 9.7253 26.793C9.61919 26.6899 9.53484 26.5666 9.47723 26.4304C9.41963 26.2942 9.38995 26.1478 9.38995 25.9998C9.38995 25.8519 9.41963 25.7055 9.47723 25.5693C9.53484 25.4331 9.61919 25.3098 9.7253 25.2067C9.8314 25.1037 9.95711 25.023 10.095 24.9694C10.2328 24.9158 10.38 24.8904 10.5279 24.8947H18.2632C18.8742 24.8947 19.3687 25.3893 19.3687 26.0003H19.3697ZM16.0539 21.578C16.0539 22.1881 15.5594 22.6826 14.9493 22.6826H10.5279C10.2404 22.6742 9.96751 22.5541 9.76713 22.3478C9.56676 22.1414 9.45467 21.8651 9.45467 21.5775C9.45467 21.2899 9.56676 21.0136 9.76713 20.8073C9.96751 20.601 10.2404 20.4808 10.5279 20.4724H14.9493C15.5594 20.4724 16.0539 20.967 16.0539 21.578Z"
+                      fill="white"
+                    ></path>
+                  </g>
+                  <defs>
+                    <radialGradient
+                      id="logo-5299-b"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientTransform="rotate(-53.15 35.608 20.231) scale(33.0407)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#6D4AFF"></stop>
+                      <stop offset="1" stop-color="#34B8EE"></stop>
+                    </radialGradient>
+                    <clipPath id="logo-5299-a">
+                      <path fill="#fff" d="M0 0h141v36H0z"></path>
+                    </clipPath>
+                  </defs>
                 </svg>
               </div>
               <span class="block text-center text-sm mt-1" aria-hidden="true"
-                >Lumo</span
-              ></a
+                >Docs</span
+              >
+            </a>
+          </li>
+          <li class="dropdown-item" data-testid="apps-dropdown-item">
+            <a
+              target="_self"
+              title="Proton Sheets"
+              class="text-center text-no-decoration outline-none--at-all flex flex-column items-center"
+              aria-current="false"
+              href="https://sheets.proton.me"
             >
+              <div
+                class="relative flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                style="--w-custom: 3.25rem; --h-custom: 3.25rem"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 38 36"
+                  width="36"
+                  height="36"
+                  fill="none"
+                  role="img"
+                  class="logo icon-size-9 glyph-only shrink-0"
+                  aria-labelledby="logo-1052-title"
+                >
+                  <title id="logo-1052-title">Proton Sheets</title>
+                  <path
+                    d="M4.00008 8.66666C4.00008 6.08933 6.08942 4 8.66674 4H27.3334C29.9107 4 32.0001 6.08934 32.0001 8.66666V27.3333C32.0001 29.9106 29.9107 32 27.3334 32H8.66674C6.08941 32 4.00008 29.9106 4.00008 27.3333V8.66666Z"
+                    fill="url(#logo-1052-a)"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.475 15.6972C13.1244 15.6972 13.651 16.2237 13.651 16.8732L13.651 26.8412C13.651 27.4907 13.1244 28.0172 12.475 28.0172C11.8255 28.0172 11.299 27.4907 11.299 26.8412L11.299 16.8732C11.299 16.2237 11.8255 15.6972 12.475 15.6972Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.37897 23.3692C7.37897 22.7197 7.90548 22.1932 8.55496 22.1932L19.643 22.1932C20.2924 22.1932 20.819 22.7197 20.819 23.3692C20.819 24.0187 20.2924 24.5452 19.643 24.5452L8.55496 24.5452C7.90548 24.5452 7.37897 24.0187 7.37897 23.3692Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    d="M18.0001 3.99998H25.0001V11H18.0001V3.99998Z"
+                    fill="white"
+                    fill-opacity="0.5"
+                  ></path>
+                  <path
+                    d="M24.9997 3.99998H27.333C29.9103 3.99998 31.9997 6.08932 31.9997 8.66665V11H24.9997V3.99998Z"
+                    fill="white"
+                    fill-opacity="0.8"
+                  ></path>
+                  <path
+                    d="M24.9997 11H31.9997V18H24.9997V11Z"
+                    fill="white"
+                    fill-opacity="0.5"
+                  ></path>
+                  <defs>
+                    <radialGradient
+                      id="logo-1052-a"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(2.06388 37.5918) rotate(-53.1504) scale(33.0407)"
+                    >
+                      <stop stop-color="#1B854C"></stop>
+                      <stop offset="1" stop-color="#26DA79"></stop>
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="block text-center text-sm mt-1" aria-hidden="true"
+                >Sheets</span
+              >
+            </a>
           </li>
         </ul>
         <div class="disclaimer">
